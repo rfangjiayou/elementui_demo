@@ -1,5 +1,14 @@
 module.exports = {
   presets: [
-    '@vue/cli-plugin-babel/preset'
+    '@vue/app'
+  ],
+  plugins: [
+    [
+      "component",
+      {   // 按需引入elementui
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
   ]
 }
