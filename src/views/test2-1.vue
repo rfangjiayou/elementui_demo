@@ -25,6 +25,7 @@ export default {
             columns: [
                 { prop: 'date', label: '日期' },
                 { prop: 'name', label: '姓名' },
+                { prop: 'email', label: '邮箱' },
                 { prop: 'address', label: '地址' }
             ],
             tableData: []
