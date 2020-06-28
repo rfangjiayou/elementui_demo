@@ -42,26 +42,35 @@
                 <el-form-item 
                     prop="description"
                     label="资料描述">
-                    <V-Editor
+                    <!-- <V-Editor
                         ref="formEditor"
                         v-model="form.description"
                         :maxLength="20"
                         :isClear="editiorClear"
                         placeholder="请输入资料描述"
                         @change="editorChange"
-                        @overlength="vaildEditor"></V-Editor>
+                        @overlength="vaildEditor"></V-Editor> -->
+                    <Q-Editor
+                        ref="formEditor"
+                        v-model="form.description"
+                        uploadBtnId="u01"
+                        :maxLength="20"
+                        imageUploadPath="/api/bug/upload-pic?bug_id=560"
+                        placeholder="请输入资料描述"
+                        @change="editorChange"
+                        @overlength="vaildEditor"></Q-Editor>
                 </el-form-item>
                 <el-form-item 
                     prop="userDes"
                     label="个人简介">
                     <Q-Editor
                         ref="QFormEditor"
+                        uploadBtnId="u02"
                         v-model="form.userDes"
                         :maxLength="20"
                         imageUploadPath="/api/bug/upload-pic?bug_id=560"
                         placeholder="请输入个人简介"
                         @change="QEditorChange"
-                        @vaild="QVaildEditor"
                         @overlength="QVaildEditor"></Q-Editor>
                 </el-form-item>
             </el-form>

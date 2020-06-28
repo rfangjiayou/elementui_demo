@@ -100,29 +100,7 @@ export default {
                                 }
                             }
                         }
-                    },
-                    // ImageExtend: {
-                    //     loading: true,
-                    //     size: 3,  // 图片大小，单位为M，1M = 1024kb
-                    //     name: this.uploadFileName,
-                    //     action: this.imageUploadPath,
-                    //     response: (res) => {
-                    //         console.log(res)
-                    //         return res.info
-                    //     },
-                    //     sizeError: (a, b, c) => {
-                    //         // 图片超过大小的回调
-                    //         console.log(a, b, c)
-                    //     },
-                    //     success: (a, b, c) => {
-                    //         // 上传成功触发的事件
-                    //         console.log(a, b, c)
-                    //     },
-                    //     error: (a, b, c) => {
-                    //         // 上传失败触发的事件
-                    //         console.log(a, b, c)
-                    //     }
-                    // },
+                    }
                 }
             }
         }
@@ -201,7 +179,7 @@ export default {
             // console.log(res, file)
             const { errno, url, errmsg } = res;
             if(errno === 0) {
-                const quill = this.$refs[[`myQuillEditor-${this.uploadBtnId}`]].quill;
+                const quill = this.$refs[`myQuillEditor-${this.uploadBtnId}`].quill;
                 const range = quill.getSelection();
                 const random = Math.floor(Math.random() * 8)
                 const resUrl = url.find((value, key) => random === key)
@@ -228,13 +206,10 @@ export default {
             }
         },
         onEditorBlur() {
-            this.$emit('vaild')
         },
         onEditorFocus() {
-
         },
         onEditorReady() {
-
         }
     },
     components: {
