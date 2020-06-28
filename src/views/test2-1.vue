@@ -1,5 +1,5 @@
 <template>
-    <v-page class="test-wrap">
+    <V-Page class="test-wrap">
         <div class="content">
             <el-table
                 :data="tableData"
@@ -30,7 +30,7 @@
                 </template>
             </el-table>
         </div>
-    </v-page>
+    </V-Page>
 </template>
 
 <script>

@@ -1,11 +1,9 @@
 <template>
 	<div class="layout">
-		<el-aside width="200px">
-			<SideLayout />
-		</el-aside>
+		<SideLayout />
 		<div class="right-container">
 			<HeaderLayout />
-			<el-main class="main-container">
+			<el-main class="main-container" :class="{'togger-main-container': leftMenuCollapse}">
 				<router-view/>
 			</el-main>
 		</div>
@@ -13,6 +11,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import HeaderLayout from './header'
 import SideLayout from './side'
 
@@ -22,6 +21,9 @@ export default {
 
 		}
 	},
+	computed: {
+        ...mapState('leftMenu', ['leftMenuCollapse'])
+    },
 	components: {
 		HeaderLayout,
 		SideLayout
@@ -38,6 +40,9 @@ export default {
 			height: 100%;
 			padding: 0;
 			width: calc(100vw - 200px);
+		}
+		.togger-main-container {
+			width: calc(100vw - 64px);
 		}
 	}
 }

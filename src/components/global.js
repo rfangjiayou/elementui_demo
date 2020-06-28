@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import CommonPage from '@/components/common/page.vue'
+import Editor from '@/components/editor'
+import QEditor from '@/components/anotherEditor'
 import { 
     Pagination,
     Dialog,
@@ -32,6 +34,7 @@ import {
     // TimePicker,
     Popover,
     Tooltip,
+    Avatar,
     // Breadcrumb,
     // BreadcrumbItem,
     Form,
@@ -113,6 +116,7 @@ const components = [
     // TimePicker,
     Popover,
     Tooltip,
+    Avatar,
     // Breadcrumb,
     // BreadcrumbItem,
     Form,
@@ -172,5 +176,7 @@ Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
 
-Vue.component('v-page', CommonPage)
+Vue.component('V-Page', CommonPage)
+Vue.component('V-Editor', Editor)
+Vue.component('Q-Editor', QEditor)
 

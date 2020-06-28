@@ -1,11 +1,13 @@
 <template>
-    <div class="side">
-        <div class="project-name">后台管理Demo</div>
+    <div class="side" :class="{'togger-menu': leftMenuCollapse}">
+        <div class="project-name" :class="{'togger-project-name': leftMenuCollapse}">{{leftMenuCollapse ? 'Demo' : '后台管理Demo'}}</div>
         <el-scrollbar class="left-menu-scroll">
             <el-menu
                 class="left-menu"
                 background-color="#30323a"
                 text-color="#fff"
+                :collapse="leftMenuCollapse"
+                :collapse-transition="false"
                 :default-openeds="defaultOpeneds"
                 :default-active="$route.name"
                 router>
@@ -41,6 +43,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
     data() {
         return {
@@ -56,18 +60,25 @@ export default {
                 { name: 'test4', title: 'test4', icon: '' }
             ]
         }
+    },
+    computed: {
+        ...mapState('leftMenu', ['leftMenuCollapse'])
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .side {
+    width: 200px;
     .project-name {
         height: 60px;
         line-height: 60px;
         text-align: center;
         background-color: #14151b;
         color: #fff;
+    }
+    .togger-project-name {
+        width: 63px;
     }
     .left-menu-scroll {
         width: 201px;
@@ -76,5 +87,8 @@ export default {
         height: 100vh;
         padding-top: 20px;
     }
+}
+.togger-menu {
+    width: 64px;
 }
 </style>
