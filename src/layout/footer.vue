@@ -1,6 +1,6 @@
 <template>
-    <div>
-        test3
+    <div class="footer">
+        
     </div>
 </template>
 
@@ -15,5 +15,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.footer {
+    width: 100%;
+    min-width: 1400px;
+    height: 200px;
+    background-color: #191970;
+}
 </style>
