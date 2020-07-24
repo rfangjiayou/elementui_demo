@@ -6,10 +6,22 @@
         </div>
         <Footer />
 	</el-scrollbar>
+	<!-- <div class="layout">
+		<el-aside width="200px">
+			<SideLayout />
+		</el-aside>
+		<div class="right-container">
+			<HeaderLayout />
+			<el-main class="main-container">
+				<router-view/>
+			</el-main>
+		</div>
+	</div> -->
 </template>
 
 <script>
 import HeaderLayout from './header'
+// import SideLayout from './side'
 import Footer from './footer'
 
 export default {
@@ -20,6 +32,7 @@ export default {
 	},
 	components: {
 		HeaderLayout,
+        // SideLayout,
         Footer
 	}
 }
@@ -36,4 +49,15 @@ export default {
         min-width: 1400px;
     }
 }
+// .layout{ 
+// 	display: flex;
+// 	.right-container {
+// 		width: 100%;
+// 		.main-container {
+// 			height: 100%;
+// 			padding: 0;
+// 			width: calc(100vw - 200px);
+// 		}
+// 	}
+// }
 </style>
