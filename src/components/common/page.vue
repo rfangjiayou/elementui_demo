@@ -27,7 +27,7 @@ export default {
             height: calc(100vh - 60px);
         }
         .common-page-content {
-            min-width: $--variable-main-min-width;
+            min-width: $--main-max-width;
         }
     }
 }

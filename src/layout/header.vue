@@ -4,8 +4,12 @@
             <div class="header-logo">
                 <img src="" alt="logo">
             </div>
-            <ul class="header-menu">
-                <li 
+            <nav class="header-menu">
+                <a class="foundation" @click="$route.push({ name: 'foundation' })">
+                    <span class="foundation-star"></span>
+                    <span class="foundation-text">安全发展基金会</span>
+                </a>
+                <div
                     v-for="item in menu"
                     :key="item.name"
                     class="header-menu-item"
@@ -40,23 +44,10 @@
                             </div>
                         </transition>
                     </template>
-                </li>
-            </ul>
+                </div>
+            </nav>
             <div class="header-setting">
-                <el-button type="info" class="submit-bug">提交漏洞</el-button>
-                <el-button type="text" class="login">登录</el-button>
-                <el-button type="text" class="setup">注册</el-button>
-                <el-dropdown class="header-setting-dropdown">
-                    <i class="el-icon-more"></i>
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>项目大厅</el-dropdown-item>
-                        <el-dropdown-item>企业服务</el-dropdown-item>
-                        <el-dropdown-item>白帽服务</el-dropdown-item>
-                        <el-dropdown-item>排行榜</el-dropdown-item>
-                        <el-dropdown-item>积分商城</el-dropdown-item>
-                        <el-dropdown-item>帮助中心</el-dropdown-item>
-                    </el-dropdown-menu>
-                </el-dropdown>
+                <el-button type="info" class="submit" @click="submit">申请体验</el-button>
             </div>
         </div>
     </div>
@@ -67,21 +58,21 @@ export default {
     data() {
         return {
             menu: [
-                { title: '项目大厅', name: 'home0', path: '/home' , children: [], menuItemShow: false },
+                { title: '产品', name: 'product', path: '/product' , children: [], menuItemShow: false },
                 { 
-                    title: '企业服务', 
-                    name: 'home1', 
-                    path: '/home1' ,
+                    title: '解决方案', 
+                    name: 'solution', 
+                    path: '/solution' ,
                     children: [
                         {
                             menuItemTitle: {
                                 name: "产品服务",
                             },
                             menuItemArray: [
-                                { title: '白帽服务1', name: 'baimao1', path: '/home1/home1-1' },
-                                { title: '白帽服务2', name: 'baimao2', path: '/home1/home1-2' },
-                                { title: '白帽服务3', name: 'baimao3', path: '/home1/home1-3' },
-                                { title: '白帽服务4', name: 'baimao4', path: '/home1/home1-4' },
+                                { title: '白帽服务1', name: 'baimao1', path: '/solution/home1-1' },
+                                { title: '白帽服务2', name: 'baimao2', path: '/solution/home1-2' },
+                                { title: '白帽服务3', name: 'baimao3', path: '/solution/home1-3' },
+                                { title: '白帽服务4', name: 'baimao4', path: '/solution/home1-4' },
                             ]
                         },
                         {
@@ -89,48 +80,26 @@ export default {
                                 name: "产品支撑",
                             },
                             menuItemArray: [
-                                { title: '白帽服务12', name: 'baimao12', path: '/home1/home1-1-1' },
-                                { title: '白帽服务22', name: 'baimao22', path: '/home1/home1-2-1' },
-                                { title: '白帽服务32', name: 'baimao32', path: '/home1/home1-3-1' },
-                                { title: '白帽服务42', name: 'baimao42', path: '/home1/home1-4-1' },
+                                { title: '白帽服务12', name: 'baimao12', path: '/solution/home1-1-1' },
+                                { title: '白帽服务22', name: 'baimao22', path: '/solution/home1-2-1' },
+                                { title: '白帽服务32', name: 'baimao32', path: '/solution/home1-3-1' },
+                                { title: '白帽服务42', name: 'baimao42', path: '/solution/home1-4-1' },
                             ]
                         }
                     ],
                     menuItemShow: false
                 },
-                { title: '白帽服务', name: 'home2', path: '/home2' , children: [], menuItemShow: false },
-                { title: '排行榜', name: 'home3', path: '/home3' , children: [], menuItemShow: false },
-                { 
-                    title: '积分商城', 
-                    name: 'home4',
-                    path: '/home4',
-                    children: [
-                        {
-                            menuItemTitle: {
-                                name: "产品服务",
-                            },
-                            menuItemArray: [
-                                { title: '白帽服务1', name: 'baimao13', path: '' },
-                                { title: '白帽服务2', name: 'baimao23', path: '' },
-                                { title: '白帽服务3', name: 'baimao33', path: '' },
-                                { title: '白帽服务4', name: 'baimao43', path: '' },
-                            ]
-                        },
-                        {
-                            menuItemTitle: {
-                                name: "产品支撑",
-                            },
-                            menuItemArray: [
-                                { title: '白帽服务12', name: 'baimao123', path: '' },
-                                { title: '白帽服务22', name: 'baimao223', path: '' },
-                                { title: '白帽服务32', name: 'baimao323', path: '' },
-                                { title: '白帽服务42', name: 'baimao423', path: '' },
-                            ]
-                        }
-                    ], 
-                    menuItemShow: false },
-                { title: '帮助中心', name: 'home5', path: '/home5' , children: [], menuItemShow: false },
+                { title: '合作与生态', name: 'ecology', path: '/ecology' , children: [], menuItemShow: false },
+                { title: '帮助中心', name: 'help', path: '/help' , children: [], menuItemShow: false },
+                { title: '关于我们', name: 'about', path: '/about' , children: [], menuItemShow: false },
             ]
+        }
+    },
+    methods: {
+        submit() {
+            document.querySelector('#xxx4')?.scrollIntoView({
+                behavior: "smooth"
+            });
         }
     }
 }
@@ -143,17 +112,44 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 10;
     background: #fff;
     .header {
-        @include main-width;
-        // max-width: 1400px;
-        // min-width: 1100px;
+        // @include main-width;
+        max-width: $--main-max-width;
         width: 100%;
         margin: 0 auto;
         display: flex;
         &-logo {
             img {
                 height: 60px;
+            }
+        }
+        .foundation {
+            margin-right: 50px;
+            &-star {
+                margin-right: 5px;
+                background: url(//sensorsdata.cn/assets/img/star_0bc1751.svg) no-repeat 0 center;
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                -webkit-animation: bigTosmall ease .5s infinite;
+                animation: bigTosmall ease .5s infinite;
+
+                @keyframes bigTosmall {
+                    0% {
+                        transform: scale(.8);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+            }
+            &:hover {
+                .foundation-text {
+                    opacity: .6;
+                }
+                cursor: pointer;
             }
         }
         &-menu {
@@ -186,7 +182,6 @@ export default {
                             a {
                                 text-decoration: none;
                                 color: #000;
-                                font-size: 14px;
                                 padding: 0 20px;
                                 &:hover {
                                     cursor: pointer;
@@ -211,29 +206,22 @@ export default {
         }
         &-setting {
             height: 60px;
+            line-height: 60px;
             padding: 0 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .submit-bug {
-                margin-right: 30px;
-            }
-            &-dropdown {
-                display: none;
+            float: right;
+            .submit {
+                // margin-right: 30px;
             }
         }
     }
     @media screen and ( max-width: 1000px ) {
         .header-menu {
-            display: none;
+            justify-content: flex-start;
+            &-item {
+                display: none;
+            }
         }
         .header-setting {
-            padding: 0 30px !important;
-            margin-left: auto;
-            &-dropdown {
-                margin-left: 20px;
-                display: block !important;
-            }
         }
     }
 }

@@ -5,82 +5,66 @@ import Layout from '@/layout'
 Vue.use(VueRouter)
 
 const routes = [
-	{
-        path: '/',
-        redirect: '/layout'
-    },
     {
-		path: '/layout',
+		path: '/',
 		component: Layout,
-		redirect: '/home',
+		redirect: '/product',
 		children: [
 			{
-				path: '/home',
-				name: 'home',
-				component: () => import(/* webpackChunkName: "home" */ '@/views/home/index.vue'),
+				path: '/product',
+				name: 'product',
+				component: () => import(/* webpackChunkName: "home" */ '@/views/product/index.vue'),
 			},
 			{
-				path: '/home1',
-                name: 'home1',
-                redirect: '/home1/home1-1',
-                component: () => import(/* webpackChunkName: "home1" */ '@/views/home1/index.vue'),
+				path: '/solution',
+                name: 'solution',
+                redirect: '/solution/home1-1',
+                component: () => import(/* webpackChunkName: "home1" */ '@/views/solution/index.vue'),
                 children: [
                     {
                         path: 'home1-1',
                         name: 'home1-1',
-                        component: () => import(/* webpackChunkName: "home1-1" */ '@/views/home1/components/home1-1.vue'),
+                        component: () => import(/* webpackChunkName: "home1-1" */ '@/views/solution/home1-1'),
                     },
                     {
                         path: 'home1-2',
                         name: 'home1-2',
-                        component: () => import(/* webpackChunkName: "home1-2" */ '@/views/home1/components/home1-2.vue'),
+                        component: () => import(/* webpackChunkName: "home1-2" */ '@/views/solution/home1-2'),
                     },
                     {
                         path: 'home1-3',
                         name: 'home1-3',
-                        component: () => import(/* webpackChunkName: "home1-3" */ '@/views/home1/components/home1-3.vue'),
+                        component: () => import(/* webpackChunkName: "home1-3" */ '@/views/solution/home1-3'),
                     },
                     {
                         path: 'home1-4',
                         name: 'home1-4',
-                        component: () => import(/* webpackChunkName: "home1-4" */ '@/views/home1/components/home1-4.vue'),
+                        component: () => import(/* webpackChunkName: "home1-4" */ '@/views/solution/home1-4'),
                     }
                 ]
+            },
+            {
+				path: '/ecology',
+				name: 'ecology',
+				component: () => import(/* webpackChunkName: "home" */ '@/views/ecology/index.vue'),
+            },
+            {
+				path: '/help',
+				name: 'help',
+				component: () => import(/* webpackChunkName: "home" */ '@/views/help/index.vue'),
+            },
+            {
+				path: '/about',
+				name: 'about',
+				component: () => import(/* webpackChunkName: "home" */ '@/views/about/index.vue'),
+            },
+            {
+				path: '/foundation',
+				name: 'foundation',
+				component: () => import(/* webpackChunkName: "home" */ '@/views/foundation/index.vue'),
 			}
 		]
 	}
-	// {
-	// 	path: '/layout',
-	// 	component: Layout,
-	// 	redirect: '/test1',
-	// 	children: [
-	// 		{
-	// 			path: '/test1',
-	// 			name: 'test1',
-	// 			component: () => import(/* webpackChunkName: "test1" */ '@/views/test1.vue'),
-	// 		},
-	// 		{
-	// 			path: '/test2-1',
-	// 			name: 'test2-1',
-	// 			component: () => import(/* webpackChunkName: "test2-1" */ '@/views/test2-1.vue'),
-	// 		},
-	// 		{
-	// 			path: '/test2-2',
-	// 			name: 'test2-2',
-	// 			component: () => import(/* webpackChunkName: "test2-2" */ '@/views/test2-2.vue'),
-	// 		},
-	// 		{
-	// 			path: '/test3',
-	// 			name: 'test3',
-	// 			component: () => import(/* webpackChunkName: "test3" */ '@/views/test3.vue'),
-	// 		},
-	// 		{
-	// 			path: '/test4',
-	// 			name: 'test4',
-	// 			component: () => import(/* webpackChunkName: "test4" */ '@/views/test4.vue'),
-	// 		},
-	// 	]
-	// }
 ];
 
 const router = new VueRouter({

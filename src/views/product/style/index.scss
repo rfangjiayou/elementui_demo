@@ -1,0 +1,19 @@
+.line-title {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    span {
+        position: relative;
+        display: inline-flex;
+        height: 40px;
+        line-height: 40px;
+        &:after {
+            content: '';
+            width: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 13px;
+            border-bottom: 5px solid green;
+        }
+    }
+}
