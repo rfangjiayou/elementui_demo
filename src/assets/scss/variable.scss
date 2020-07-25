@@ -1,1 +1,19 @@
+$--primary-color: #01d8a9;
+$--primary-btn-hover-color: #01d8a9;
+$--color-header: #fff;
+$--color-main-background: #e5ebf1;
+$--color-base-text: #edffef;
+
 $--main-max-width: 1200px;
+$--header-height: 60px;
+
+$--button-border-radius: 20px;
+
+@mixin primary-btn {
+    background: $--primary-color;
+    border-color: $--primary-color;
+    &:hover {
+        background: $--primary-btn-hover-color;
+        opacity: .6;
+    }
+}

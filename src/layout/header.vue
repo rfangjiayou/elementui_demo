@@ -107,13 +107,13 @@ export default {
 
 <style lang="scss" scoped>
 .header-wrap {
-    height: 60px;
+    height: $--header-height;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    background: #fff;
+    background: $--color-header;
     .header {
         // @include main-width;
         max-width: $--main-max-width;
@@ -168,7 +168,7 @@ export default {
                     top: 60px;
                     padding: 20px 0;
                     width: 100%;
-                    background: #fff;
+                    background: $--color-header;
                     display: table;
                     &-row {
                         display: table-row;
@@ -210,7 +210,7 @@ export default {
             padding: 0 20px;
             float: right;
             .submit {
-                // margin-right: 30px;
+                @include primary-btn
             }
         }
     }

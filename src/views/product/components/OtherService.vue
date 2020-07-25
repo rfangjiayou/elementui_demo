@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: 'OtherService',
     data() {
         return {
 
@@ -22,7 +23,7 @@ export default {
     margin-top: 50px;
     &-content {
         height: 300px;
-        background: #ccc;
+        background: $--color-main-background;
     }
 }
 </style>

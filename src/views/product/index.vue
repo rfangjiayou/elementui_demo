@@ -14,6 +14,7 @@ import OtherService from './components/OtherService'
 import WhySelectUs from './components/WhySelectUs'
 
 export default {
+    name: 'Product',
     components: {
         Carousel,
         Introduction,

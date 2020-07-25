@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: 'WhySelectUs',
     data() {
         return {
 
@@ -25,7 +26,7 @@ export default {
     }
     &-content {
         height: 300px;
-        background: #ccc;
+        background: $--color-main-background;
     }
 }
 </style>

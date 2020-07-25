@@ -29,10 +29,9 @@ export default {
 .layout{ 
     height: 100%;
 	.main-container {
-        margin-top: 60px;
+        margin-top: $--header-height;
         padding: 0;
         height: 100%;
-        // min-width: 1400px;
     }
 }
 </style>

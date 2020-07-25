@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import CommonPage from '@/components/common/page.vue'
 import { 
     Pagination,
     Dialog,
@@ -171,6 +170,3 @@ Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
-
-Vue.component('v-page', CommonPage)
-

@@ -33,6 +33,7 @@ import Content from '@/components/content'
 import Card from './Card'
 
 export default {
+    name: 'Introduction',
     components: {
         Content,
         Card
@@ -50,7 +51,7 @@ export default {
     &-content {
         max-width: $--main-max-width;
         margin: auto;
-        background: #ccc;
+        background: $--color-main-background;
         display: flex;
         &-image {
             width: 600px;
