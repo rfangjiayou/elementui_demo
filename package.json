@@ -2,6 +2,10 @@
   "name": "elementui_demo",
   "version": "0.1.0",
   "private": true,
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:dev": "cross-env NODE_ENV=development vue-cli-service build",

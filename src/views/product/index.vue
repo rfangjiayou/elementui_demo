@@ -1,32 +1,30 @@
 <template>
-    <div class="product">
-        <Carousel></Carousel>
-        <Introduction></Introduction>
-        <OtherService></OtherService>
-        <WhySelectUs></WhySelectUs>
-    </div>
+  <div class="product">
+    <Carousel></Carousel>
+    <Introduction></Introduction>
+    <OtherService></OtherService>
+    <WhySelectUs></WhySelectUs>
+  </div>
 </template>
 
 <script>
-import Carousel from './components/Carousel'
-import Introduction from './components/Introduction'
-import OtherService from './components/OtherService'
-import WhySelectUs from './components/WhySelectUs'
+import Carousel from "./components/Carousel";
+import Introduction from "./components/Introduction";
+import OtherService from "./components/OtherService";
+import WhySelectUs from "./components/WhySelectUs";
 
 export default {
-    name: 'Product',
-    components: {
-        Carousel,
-        Introduction,
-        OtherService,
-        WhySelectUs
-    },
-    data() {
-        return {
-
-        }
-    }
-}
+	name: "Product",
+	components: {
+		Carousel,
+		Introduction,
+		OtherService,
+		WhySelectUs
+	},
+	data() {
+		return {};
+	}
+};
 </script>
 
 <style lang="scss">

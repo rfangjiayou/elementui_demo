@@ -1,20 +1,16 @@
 <template>
-    <div>
-        foundation
-    </div>
+  <div>
+    foundation
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Foundation',
-    data() {
-        return {
-
-        }
-    }
-}
+	name: "Foundation",
+	data() {
+		return {};
+	}
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

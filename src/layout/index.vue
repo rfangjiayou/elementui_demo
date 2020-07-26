@@ -1,37 +1,38 @@
 <template>
-	<el-scrollbar class="layout">
-        <Header />
-		<div class="main-container">
-            <router-view/>
-        </div>
-        <Footer />
-	</el-scrollbar>
+  <el-scrollbar class="layout">
+    <Header />
+    <div class="main-container">
+      <router-view />
+    </div>
+    <Footer />
+  </el-scrollbar>
 </template>
 
 <script>
-import Header from './header'
-import Footer from './footer'
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default {
 	data() {
-		return {
-
-		}
+		return {};
 	},
 	components: {
 		Header,
-        Footer
+		Footer
 	}
-}
+};
 </script>
 
 <style lang="scss" scoped>
-.layout{ 
+.layout {
+  height: 100%;
+  .main-container {
+    margin-top: $--header-height;
+    padding: 0;
     height: 100%;
-	.main-container {
-        margin-top: $--header-height;
-        padding: 0;
-        height: 100%;
-    }
+  }
+  /deep/ .el-scrollbar__bar {
+    z-index: $--header-z-index + 1;
+  }
 }
 </style>
