@@ -1,15 +1,15 @@
 <template>
-  <div>
-    ecology
-  </div>
+    <div>
+        ecology
+    </div>
 </template>
 
 <script>
 export default {
-	name: "Ecology",
-	data() {
-		return {};
-	}
+    name: 'Ecology',
+    data () {
+        return {};
+    }
 };
 </script>
 

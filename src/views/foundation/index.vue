@@ -1,15 +1,15 @@
 <template>
-  <div>
-    foundation
-  </div>
+    <div>
+        foundation
+    </div>
 </template>
 
 <script>
 export default {
-	name: "Foundation",
-	data() {
-		return {};
-	}
+    name: 'Foundation',
+    data () {
+        return {};
+    }
 };
 </script>
 
