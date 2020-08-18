@@ -7,14 +7,14 @@ Vue.use(VueRouter);
 /**
  * 重写路由的push replace方法
  */
-const routerPush = VueRouter.prototype.push
-const routerReplace = VueRouter.prototype.replace
-VueRouter.prototype.push = function push(location) {
-  return routerPush.call(this, location).catch(error=> error)
-}
-VueRouter.prototype.replace = function push(location) {
-  return routerReplace.call(this, location).catch(error=> error)
-}
+const routerPush = VueRouter.prototype.push;
+const routerReplace = VueRouter.prototype.replace;
+VueRouter.prototype.push = function push (location) {
+    return routerPush.call(this, location).catch(error => error);
+};
+VueRouter.prototype.replace = function push (location) {
+    return routerReplace.call(this, location).catch(error => error);
+};
 
 const routes = [
     {

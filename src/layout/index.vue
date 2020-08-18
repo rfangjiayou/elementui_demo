@@ -26,10 +26,7 @@ export default {
 <style lang="scss" scoped>
 .layout {
     height: 100%;
-	// /deep/ .el-scrollbar__wrap {
-	// 	overflow: hidden;
-	// }
-	.main-container {
+    .main-container {
         background-color: #ccc;
         margin-top: 60px;
         padding: 0;
