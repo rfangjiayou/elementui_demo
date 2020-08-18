@@ -129,7 +129,7 @@ export default {
                         }
                     ], 
                     menuItemShow: false },
-                { title: '帮助中心', name: 'home5', path: '/home5' , children: [], menuItemShow: false },
+                { title: '帮助中心', name: 'home5', path: '/home1' , children: [], menuItemShow: false },
             ]
         }
     }
@@ -144,6 +144,7 @@ export default {
     left: 0;
     width: 100%;
     background: #fff;
+    z-index: 10;
     .header {
         @include main-width;
         // max-width: 1400px;
