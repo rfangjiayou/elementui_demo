@@ -1,6 +1,5 @@
-import Vue from 'vue'
-import CommonPage from '@/components/common/page.vue'
-import { 
+import Vue from 'vue';
+import {
     Pagination,
     Dialog,
     Autocomplete,
@@ -53,10 +52,10 @@ import {
     // Rate,
     // Steps,
     // Step,
-    // Carousel,
-    // CarouselItem,
-    // Collapse,
-    // CollapseItem,
+    Carousel,
+    CarouselItem,
+    Collapse,
+    CollapseItem,
     // Cascader,
     // ColorPicker,
     // Transfer,
@@ -134,10 +133,10 @@ const components = [
     // Rate,
     // Steps,
     // Step,
-    // Carousel,
-    // CarouselItem,
-    // Collapse,
-    // CollapseItem,
+    Carousel,
+    CarouselItem,
+    Collapse,
+    CollapseItem,
     // Cascader,
     // ColorPicker,
     // Transfer,
@@ -156,12 +155,12 @@ const components = [
     PageHeader,
     // CascaderPanel,
     Scrollbar
-]
+];
 
 components.map(component => {
     // Vue.component(component.name, component);
     Vue.use(component);
-})
+});
 Vue.use(Loading.directive);
 
 Vue.prototype.$loading = Loading.service;
@@ -171,6 +170,3 @@ Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
-
-Vue.component('v-page', CommonPage)
-

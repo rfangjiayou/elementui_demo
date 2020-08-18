@@ -1,8 +1,11 @@
-const proxyConfig = require('./config/proxy')
-const { configureWebpack, chainWebpack } = require('./config/webpack.config.js')
+const proxyConfig = require('./config/proxy');
+const {
+    configureWebpack,
+    chainWebpack
+} = require('./config/webpack.config.js');
 
-const NODE_ENV = process.env.NODE_ENV
-const isProd = NODE_ENV === 'production'
+const NODE_ENV = process.env.NODE_ENV;
+const isProd = NODE_ENV === 'production';
 
 const vueConfig = {
     productionSourceMap: !isProd,
@@ -14,10 +17,10 @@ const vueConfig = {
     // 全局scss文件
     css: {
         extract: true,
-        sourceMap: isProd ? false : true,
+        sourceMap: !isProd,
         loaderOptions: {
             scss: {
-                prependData: '@import "~@/assets/scss/index.scss";'
+                prependData: '@import "~@/style/index.scss";'
             }
         },
         // 关闭css module
@@ -33,5 +36,5 @@ const vueConfig = {
         }
     },
     devServer: proxyConfig
-}
+};
 module.exports = vueConfig;

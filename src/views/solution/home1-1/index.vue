@@ -131,7 +131,7 @@
 
 <script>
 export default {
-    data() {
+    data () {
         return {
             baseRoutePath: this.$route.path,
             scrollHash: '',
@@ -218,7 +218,7 @@ export default {
         await this.init()
         document.querySelector('.right .el-scrollbar__wrap').addEventListener('scroll', this.handleScroll)
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,4 +1,4 @@
-const mock = require('../mock');    // 引入mock/index.js
+const mock = require('../mock'); // 引入mock/index.js
 const NODE_ENV = process.env.NODE_ENV;
 const isMock = NODE_ENV === 'mock';
 
@@ -10,7 +10,7 @@ const mockProxy = {
         },
         changeOrigin: true
     }
-}
+};
 const proxy = {
     '/api': {
         target: 'http://localhost:5050',
@@ -23,7 +23,7 @@ const proxy = {
         // },
         changeOrigin: true
     }
-}
+};
 
 let config = {
     port: 5050,
@@ -34,9 +34,9 @@ let config = {
         poll: true
     },
     proxy: isMock ? mockProxy : proxy
-}
-if(isMock) {
-    config = { ...config, ...{ before: mock }}
+};
+if (isMock) {
+    config = { ...config, ...{ before: mock } };
 }
 
-module.exports = config
+module.exports = config;

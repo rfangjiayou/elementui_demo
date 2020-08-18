@@ -1,45 +1,30 @@
 <template>
-	<el-scrollbar class="layout">
-        <HeaderLayout />
-		<div class="main-container">
-            <router-view/>
+    <el-scrollbar class="layout">
+        <Header />
+        <div class="main-container">
+            <router-view />
         </div>
         <Footer />
-	</el-scrollbar>
-	<!-- <div class="layout">
-		<el-aside width="200px">
-			<SideLayout />
-		</el-aside>
-		<div class="right-container">
-			<HeaderLayout />
-			<el-main class="main-container">
-				<router-view/>
-			</el-main>
-		</div>
-	</div> -->
+    </el-scrollbar>
 </template>
 
 <script>
-import HeaderLayout from './header'
-// import SideLayout from './side'
-import Footer from './footer'
+import Header from '@/components/header';
+import Footer from '@/components/footer';
 
 export default {
-	data() {
-		return {
-
-		}
-	},
-	components: {
-		HeaderLayout,
-        // SideLayout,
+    data () {
+        return {};
+    },
+    components: {
+        Header,
         Footer
-	}
-}
+    }
+};
 </script>
 
 <style lang="scss" scoped>
-.layout{ 
+.layout {
     height: 100%;
 	// /deep/ .el-scrollbar__wrap {
 	// 	overflow: hidden;
@@ -52,15 +37,4 @@ export default {
         min-width: 1400px;
     }
 }
-// .layout{ 
-// 	display: flex;
-// 	.right-container {
-// 		width: 100%;
-// 		.main-container {
-// 			height: 100%;
-// 			padding: 0;
-// 			width: calc(100vw - 200px);
-// 		}
-// 	}
-// }
 </style>
