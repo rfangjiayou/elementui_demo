@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'vue'
 import {
     Pagination,
     Dialog,
@@ -78,7 +78,7 @@ import {
     Message,
     Notification,
     Scrollbar
-} from 'element-ui';
+} from 'element-ui'
 
 const components = [
     Pagination,
@@ -155,18 +155,18 @@ const components = [
     PageHeader,
     // CascaderPanel,
     Scrollbar
-];
+]
 
 components.map(component => {
     // Vue.component(component.name, component);
-    Vue.use(component);
-});
-Vue.use(Loading.directive);
+    Vue.use(component)
+})
+Vue.use(Loading.directive)
 
-Vue.prototype.$loading = Loading.service;
-Vue.prototype.$msgbox = MessageBox;
-Vue.prototype.$alert = MessageBox.alert;
-Vue.prototype.$confirm = MessageBox.confirm;
-Vue.prototype.$prompt = MessageBox.prompt;
-Vue.prototype.$notify = Notification;
-Vue.prototype.$message = Message;
+Vue.prototype.$loading = Loading.service
+Vue.prototype.$msgbox = MessageBox
+Vue.prototype.$alert = MessageBox.alert
+Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$prompt = MessageBox.prompt
+Vue.prototype.$notify = Notification
+Vue.prototype.$message = Message

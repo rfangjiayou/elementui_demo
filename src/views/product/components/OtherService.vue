@@ -10,10 +10,10 @@
 <script>
 export default {
     name: 'OtherService',
-    data () {
-        return {};
+    data() {
+        return {}
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>

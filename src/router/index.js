@@ -1,20 +1,20 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Layout from '@/layout';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Layout from '@/layout'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 /**
  * 重写路由的push replace方法
  */
-const routerPush = VueRouter.prototype.push;
-const routerReplace = VueRouter.prototype.replace;
-VueRouter.prototype.push = function push (location) {
-    return routerPush.call(this, location).catch(error => error);
-};
-VueRouter.prototype.replace = function push (location) {
-    return routerReplace.call(this, location).catch(error => error);
-};
+const routerPush = VueRouter.prototype.push
+const routerReplace = VueRouter.prototype.replace
+VueRouter.prototype.push = function push(location) {
+    return routerPush.call(this, location).catch(error => error)
+}
+VueRouter.prototype.replace = function push(location) {
+    return routerReplace.call(this, location).catch(error => error)
+}
 
 const routes = [
     {
@@ -107,11 +107,11 @@ const routes = [
             }
         ]
     }
-];
+]
 
 const router = new VueRouter({
     mode: 'history',
     routes
-});
+})
 
-export default router;
+export default router

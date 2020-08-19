@@ -1,11 +1,11 @@
-const proxyConfig = require('./config/proxy');
+const proxyConfig = require('./config/proxy')
 const {
     configureWebpack,
     chainWebpack
-} = require('./config/webpack.config.js');
+} = require('./config/webpack.config.js')
 
-const NODE_ENV = process.env.NODE_ENV;
-const isProd = NODE_ENV === 'production';
+const NODE_ENV = process.env.NODE_ENV
+const isProd = NODE_ENV === 'production'
 
 const vueConfig = {
     productionSourceMap: !isProd,
@@ -36,5 +36,5 @@ const vueConfig = {
         }
     },
     devServer: proxyConfig
-};
-module.exports = vueConfig;
+}
+module.exports = vueConfig

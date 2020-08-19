@@ -9,18 +9,18 @@
 </template>
 
 <script>
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 export default {
-    data () {
-        return {};
+    data() {
+        return {}
     },
     components: {
         Header,
         Footer
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>

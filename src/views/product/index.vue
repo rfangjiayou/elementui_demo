@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Carousel from './components/Carousel';
-import Introduction from './components/Introduction';
-import OtherService from './components/OtherService';
-import WhySelectUs from './components/WhySelectUs';
+import Carousel from './components/Carousel'
+import Introduction from './components/Introduction'
+import OtherService from './components/OtherService'
+import WhySelectUs from './components/WhySelectUs'
 
 export default {
     name: 'Product',
@@ -21,10 +21,10 @@ export default {
         OtherService,
         WhySelectUs
     },
-    data () {
-        return {};
+    data() {
+        return {}
     }
-};
+}
 </script>
 
 <style lang="scss">

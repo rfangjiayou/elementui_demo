@@ -61,40 +61,40 @@
 </template>
 
 <script>
-import { menu } from '../menu.js';
+import { menu } from '../menu.js'
 
 export default {
     name: 'MenuToggle',
-    data () {
+    data() {
         return {
             activeName: '',
             menuShow: false
-        };
+        }
     },
     computed: {
-        menuList () {
+        menuList() {
             menu.unshift({
                 title: '安全发展基金会',
                 name: 'foundation',
                 path: '/foundation',
                 children: [],
                 menuItemShow: false
-            });
-            return menu;
+            })
+            return menu
         }
     },
     watch: {
-        menuShow (val) {
-            if (!val) this.activeName = '';
+        menuShow(val) {
+            if (!val) this.activeName = ''
         }
     },
     methods: {
-        jumpToModule (routeName) {
-            this.menuShow = false;
-            this.$router.push({ name: routeName });
+        jumpToModule(routeName) {
+            this.menuShow = false
+            this.$router.push({ name: routeName })
         }
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>

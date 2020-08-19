@@ -70,28 +70,28 @@
 </template>
 
 <script>
-import MenuToggle from './components/MenuToggle';
-import { menu } from './menu.js';
+import MenuToggle from './components/MenuToggle'
+import { menu } from './menu.js'
 
 export default {
     name: 'Header',
     components: {
         MenuToggle
     },
-    data () {
+    data() {
         return {
             menu
-        };
+        }
     },
     methods: {
-        submit () {}
+        submit() {}
         // scrollIntoView () {
         //     document.querySelector('#xxx4')?.scrollIntoView({
         //         behavior: 'smooth'
         //     })
         // }
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>

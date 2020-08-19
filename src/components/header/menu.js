@@ -89,6 +89,6 @@ const menu = [
         children: [],
         menuItemShow: false
     }
-];
+]
 
-export { menu };
+export { menu }

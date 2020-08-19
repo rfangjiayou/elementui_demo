@@ -1,4 +1,4 @@
-import http from './axios';
+import http from './axios'
 
 export const get = (url, data = {}, config = {}) => {
     const options = Object.assign(
@@ -6,24 +6,24 @@ export const get = (url, data = {}, config = {}) => {
             params: data
         },
         config
-    );
-    return http.get(url, options);
-};
+    )
+    return http.get(url, options)
+}
 export const del = (url, data = {}, config = {}) => {
     const options = Object.assign(
         {
             params: data
         },
         config
-    );
-    return http.delete(url, options);
-};
+    )
+    return http.delete(url, options)
+}
 
 export const post = (url, data = {}, config = {}) =>
-    http.post(url, data, config);
-export const put = (url, data = {}, config = {}) => http.put(url, data, config);
+    http.post(url, data, config)
+export const put = (url, data = {}, config = {}) => http.put(url, data, config)
 export const patch = (url, data = {}, config = {}) =>
-    http.patch(url, data, config);
+    http.patch(url, data, config)
 
 export default {
     get,
@@ -31,4 +31,4 @@ export default {
     put,
     patch,
     del
-};
+}

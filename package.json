@@ -55,8 +55,18 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "indent": ["warn", 4],
-      "semi": ["warn", "always"]
+      "indent": [
+        "warn",
+        4
+      ],
+      "semi": [
+        "warn",
+        "never"
+      ],
+      "space-before-function-paren": [
+        "warn", 
+        "never"
+      ]
     }
   },
   "browserslist": [

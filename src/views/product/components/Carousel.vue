@@ -11,10 +11,10 @@
 <script>
 export default {
     name: 'Carousel',
-    data () {
-        return {};
+    data() {
+        return {}
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>

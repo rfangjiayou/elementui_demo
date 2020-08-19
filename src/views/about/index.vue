@@ -7,10 +7,10 @@
 <script>
 export default {
     name: 'About',
-    data () {
-        return {};
+    data() {
+        return {}
     }
-};
+}
 </script>
 
 <style lang="scss" scoped></style>

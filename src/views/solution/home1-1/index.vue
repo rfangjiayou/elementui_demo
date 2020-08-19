@@ -131,94 +131,94 @@
 
 <script>
 export default {
-    data () {
+    data() {
         return {
             baseRoutePath: this.$route.path,
             scrollHash: '',
             menuList: []
-        };
+        }
     },
     computed: {
-        getArticalDom () {
-            return this.menuList.map(ele => document.querySelector(`div[id=${ele.id}]`));
+        getArticalDom() {
+            return this.menuList.map(ele => document.querySelector(`div[id=${ele.id}]`))
         }
     },
     methods: {
-        init () {
-            this.initMenuList();
-            this.updateDom();
+        init() {
+            this.initMenuList()
+            this.updateDom()
             if (this.$route.hash) {
-                return this.scrollIntoHash();
+                return this.scrollIntoHash()
             } else {
-                this.scrollIntoFirst();
+                this.scrollIntoFirst()
             }
         },
-        initMenuList () {
-            const domList = this.$refs.article?.querySelectorAll('div[id]');
+        initMenuList() {
+            const domList = this.$refs.article?.querySelectorAll('div[id]')
             this.menuList = Array.from(domList)?.map(ele => {
                 return {
                     id: ele.id,
                     label: ele.ariaLabel
-                };
-            });
+                }
+            })
         },
-        updateDom () {
-            const lastMenu = this.menuList[this.menuList.length - 1];
-            const targetDom = document.querySelector(`div[id=${lastMenu.id}]`);
-            const offsetHeight = targetDom?.offsetHeight;
-            const scrollHeight = document.querySelector('.right .el-scrollbar__wrap')?.offsetHeight;
+        updateDom() {
+            const lastMenu = this.menuList[this.menuList.length - 1]
+            const targetDom = document.querySelector(`div[id=${lastMenu.id}]`)
+            const offsetHeight = targetDom?.offsetHeight
+            const scrollHeight = document.querySelector('.right .el-scrollbar__wrap')?.offsetHeight
             if (scrollHeight > offsetHeight) {
-                targetDom.style.height = `${scrollHeight}px`;
+                targetDom.style.height = `${scrollHeight}px`
             }
         },
-        handleScroll () {
-            const scrollTop = document.querySelector('.right .el-scrollbar__wrap').scrollTop;
-            let sumHeight = 0;
+        handleScroll() {
+            const scrollTop = document.querySelector('.right .el-scrollbar__wrap').scrollTop
+            let sumHeight = 0
             const targetdDom = this.getArticalDom?.reduce((previous, current) => {
-                const preOffsetHeight = previous.offsetHeight;
-                sumHeight += preOffsetHeight;
+                const preOffsetHeight = previous.offsetHeight
+                sumHeight += preOffsetHeight
 
-                return sumHeight > scrollTop ? previous : current;
-            });
-            this.$router.replace({ hash: targetdDom.id });
+                return sumHeight > scrollTop ? previous : current
+            })
+            this.$router.replace({ hash: targetdDom.id })
         },
-        scrollIntoHash () {
+        scrollIntoHash() {
             return new Promise(resolve => {
                 this.$nextTick(() => {
                     const anchor = document.querySelector(
                         `a[href="${this.$route.hash}"]`
-                    );
+                    )
                     if (anchor) {
-                        anchor.click();
+                        anchor.click()
                     } else {
-                        document.querySelector(this.$route.hash).scrollIntoView();
+                        document.querySelector(this.$route.hash).scrollIntoView()
                     }
-                    resolve();
-                });
-            });
+                    resolve()
+                })
+            })
         },
-        scrollIntoFirst () {
+        scrollIntoFirst() {
             return new Promise(resolve => {
                 this.$nextTick(() => {
-                    const href = this.menuList[0]?.id;
+                    const href = this.menuList[0]?.id
                     const anchor = this.$refs.menu?.querySelector(
                         `a[href="#${href}"]`
-                    );
+                    )
                     if (anchor) {
-                        anchor.click();
+                        anchor.click()
                     } else {
-                        document.querySelector(`div[id=${href}]`).scrollIntoView();
+                        document.querySelector(`div[id=${href}]`).scrollIntoView()
                     }
-                    resolve();
-                });
-            });
+                    resolve()
+                })
+            })
         }
     },
-    async mounted () {
-        await this.init();
-        document.querySelector('.right .el-scrollbar__wrap').addEventListener('scroll', this.handleScroll);
+    async mounted() {
+        await this.init()
+        document.querySelector('.right .el-scrollbar__wrap').addEventListener('scroll', this.handleScroll)
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -10,10 +10,10 @@
 <script>
 export default {
     name: 'WhySelectUs',
-    data () {
-        return {};
+    data() {
+        return {}
     }
-};
+}
 </script>
 
 <style lang="scss" scoped>
