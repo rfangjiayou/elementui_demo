@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { handlePostReducer } from './utils'
-import app from '@/main'
+import { Bus } from '@/utils'
+import { ERROR_TYPE_MAP } from '@/constant'
 
 const instanceConfig = {
     // 指定请求超时的毫秒数(0 表示无超时时间)
@@ -58,7 +59,7 @@ instance.interceptors.request.use(
         return config
     },
     function(error) {
-        // 对请求错误做些什么
+    // 对请求错误做些什么
         return Promise.reject(error)
     }
 )
@@ -78,42 +79,17 @@ instance.interceptors.response.use(
                     : typeof res.errmsg === 'object'
                         ? Object.values(res.errmsg)[0][0]
                         : JSON.stringify(res.errmsg)
-            app.$message({
-                type: 'error',
-                message: message
-            })
+
+            Bus.$emit(ERROR_TYPE_MAP.errno, errno, message)
         }
         return res
-    },
-    function(error) {
-        const res =
-            (error.response.data && JSON.parse(error.response.data)) || {}
-        if (res.status === 401) {
-            if (app.$route.name !== 'Login') {
-                app.$message({
-                    type: 'error',
-                    message: res.message
-                })
-                app.$router.push({ name: 'Login' })
-            }
-        } else if (res.status === 500) {
-            app.$message({
-                type: 'error',
-                message: '服务器响应失败'
-            })
-        } else if (res.status === 503) {
-            // 请求频繁，api和nginx
-            app.$message({
-                type: 'error',
-                message: '请求过于频繁，请稍后尝试'
-            })
-        } else {
-            app.$message({
-                type: 'error',
-                message: res.message
-            })
-        }
-        return res
+    }, error => {
+        // const res = (error.response.data && JSON.parse(error.response.data)) || {};
+        // Bus.$emit(ERROR_TYPE_MAP.status, res.status, res.message);
+        Bus.$emit(ERROR_TYPE_MAP.status, error.response.status, error.response.statusText)
+
+        // return res;
+        return error
     }
 )
 
